@@ -1,13 +1,20 @@
-var beca=false;
-var dinero=true;
+function compra(objeto)
+{
+  switch (objeto) {
+    case 1:
+      console.log("Has comprado una Pocion");
+    break;
 
+    case 2:
+      console.log("Has comprado una Magia");
+    break;
 
-if (dinero==true && beca==true) {
-    console.log("Puedes entrar en la universidad");
-}else {
-  if(beca==false)
-  {
-    console.log("Consigue una beca");
+    case 3:
+      console.log("Has comprado una Espada");
+    break;
+
+    default:
+      console.log("No tengo ni idea de lo que has comprado");
+    break;
   }
-  console.log("No puedes entrar en la universidad");
 }
