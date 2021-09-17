@@ -1,13 +1,23 @@
+var numeroCPU=0;
+var numeroUsuario=0;
 
-function tablas()
+
+numeroCPU=Math.floor((Math.random()*10)+1);
+do
 {
-  for(tabla=1;tabla<10;tabla++)
-  {
-    console.log("Tabla del: "+tabla);
-    for(multiplicador=1;multiplicador<11;multiplicador++)
+  numeroUsuario=parseInt(prompt("Adivina el numero que he pensado (1-10)"));
+
+  if(numeroUsuario==numeroCPU){
+    console.log("Has acertado!");
+  }else {
+    if(numeroCPU<numeroUsuario)
     {
-      var resultado=tabla*multiplicador;
-      console.log(tabla + "X" + multiplicador + "=" + resultado);
+      alert("El numero es menor")
+    }
+
+    if(numeroCPU>numeroUsuario)
+    {
+      alert("El numero es mayor")
     }
   }
-}
+} while (numeroUsuario!=numeroCPU);
