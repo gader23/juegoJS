@@ -1,20 +1,13 @@
-function compra(objeto)
+
+function tablas()
 {
-  switch (objeto) {
-    case 1:
-      console.log("Has comprado una Pocion");
-    break;
-
-    case 2:
-      console.log("Has comprado una Magia");
-    break;
-
-    case 3:
-      console.log("Has comprado una Espada");
-    break;
-
-    default:
-      console.log("No tengo ni idea de lo que has comprado");
-    break;
+  for(tabla=1;tabla<10;tabla++)
+  {
+    console.log("Tabla del: "+tabla);
+    for(multiplicador=1;multiplicador<11;multiplicador++)
+    {
+      var resultado=tabla*multiplicador;
+      console.log(tabla + "X" + multiplicador + "=" + resultado);
+    }
   }
 }
