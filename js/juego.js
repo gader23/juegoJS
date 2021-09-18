@@ -1,21 +1,27 @@
-var configTeclado={prevent_repeat : true};
-var eventoTeclado = new window.keypress.Listener(this,configTeclado);
+var miCanvas;
 
-function pulsaA()
+
+function inicializar()
 {
-  console.log('Has pulsado a');
+  miCanvas=document.getElementById('canvas');
+  miCanvas.addEventListener('mousedown',clicRaton,false);
+  miCanvas.addEventListener('mouseup',sueltaRaton,false);
+    miCanvas.addEventListener('mousemove',posicionRaton,false);
 }
 
-function pulsaAB()
+function clicRaton(e)
 {
-  console.log('Has pulsado a y b a la vez');
+   console.log('Pulsado raton');
 }
 
-function ataqueEspecial()
+function sueltaRaton(e)
 {
-  console.log('ATAQUE ESPECIAL!!!!');
+   console.log('Liberado raton');
 }
 
-eventoTeclado.simple_combo('a', pulsaA);
-eventoTeclado.simple_combo('a b', pulsaAB);
-eventoTeclado.sequence_combo('up down a b',ataqueEspecial);
+function posicionRaton(e)
+{
+  var x=e.pageX;
+  var y=e.pageY;
+  console.log('x: '+x+' - y: '+y);
+}
