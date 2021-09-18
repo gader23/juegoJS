@@ -1,21 +1,21 @@
-var fps=10;
-var xEscenario=0;
+var configTeclado={prevent_repeat : true};
+var eventoTeclado = new window.keypress.Listener(this,configTeclado);
 
-function atacar()
+function pulsaA()
 {
-  console.log("Has atacado");
+  console.log('Has pulsado a');
 }
 
-function mueveEscenario()
+function pulsaAB()
 {
-  xEscenario++;
-  console.log(xEscenario);
+  console.log('Has pulsado a y b a la vez');
 }
 
-//BUCLE PRINCIPAL
-function principal()
+function ataqueEspecial()
 {
-  mueveEscenario();
+  console.log('ATAQUE ESPECIAL!!!!');
 }
 
-setInterval(principal,1000/fps);
+eventoTeclado.simple_combo('a', pulsaA);
+eventoTeclado.simple_combo('a b', pulsaAB);
+eventoTeclado.sequence_combo('up down a b',ataqueEspecial);
