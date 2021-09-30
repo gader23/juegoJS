@@ -1,27 +1,24 @@
-var miCanvas;
-
-
-function inicializar()
+var personaje=function(x,y,nombre)
 {
-  miCanvas=document.getElementById('canvas');
-  miCanvas.addEventListener('mousedown',clicRaton,false);
-  miCanvas.addEventListener('mouseup',sueltaRaton,false);
-    miCanvas.addEventListener('mousemove',posicionRaton,false);
+  this.x=x;
+  this.y=y;
+  this.nombre=nombre;
+
+//METODO "ABAJO"
+  this.abajo=function()
+  {
+    this.y+=10;
+  }
+
+  //METODO  "HABLAR"
+  this.hablar=function()
+  {
+    console.log('Hola forastero, me llamo ' + this.nombre);
+  }
 }
 
-function clicRaton(e)
-{
-   console.log('Pulsado raton');
-}
+var personaje1=new personaje(10,100,'Frodo');
+var personaje2=new personaje(220,380,'Sam');
 
-function sueltaRaton(e)
-{
-   console.log('Liberado raton');
-}
-
-function posicionRaton(e)
-{
-  var x=e.pageX;
-  var y=e.pageY;
-  console.log('x: '+x+' - y: '+y);
-}
+personaje1.x=556;
+personaje1.abajo();
